@@ -1,6 +1,6 @@
 {
   "name": "imageslider-next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/imageslider-next.js",
   "files": [
     "dist"
@@ -11,10 +11,14 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["image slider", "tailwindcss", "nextjs"],
+  "author": "Michael Tang",
   "license": "ISC",
-  "description": "",
+  "description": "Simple image slider component with left to right slide animation.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtang35/imageslider-next.git"
+  },
   "dependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",

@@ -1,8 +1,10 @@
 # Simple Image Slider - Next
-
+ 
+ imageslider-next is a simple image slider using tailwind css.
 
 ## Installation
 
+`npm i imageslider-next`
 
 ## Example
 
