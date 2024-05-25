@@ -1,21 +1,9 @@
 'use strict'
 
 import React, { useEffect, useState } from 'react';
+import { ImageSliderProps } from './imagesliderprops';
+import 'tailwindcss/tailwind.css';
 
-interface ItemData {
-  id: number;
-  imageUrl: string;
-  title: string;
-}
-
-interface ImageSliderProps {
-  data: ItemData[];
-  sliderStyle: string;
-  slideStyle: string;
-  buttonStyle: string;
-  imageWidth: number;
-  imageHeight: number;
-}
 
 const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderStyle, slideStyle, buttonStyle, imageWidth, imageHeight }) => {
   
