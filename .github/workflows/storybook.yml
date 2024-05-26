@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@main
+        uses: actions/checkout@2.3.1
 
       - name: Merge main -> storybook-deploy 🚀
-        uses: devmasx/merge-branch@main
+        uses: devmasx/merge-branch@1.4.0
         with:
           type: now
           from_branch: main
