@@ -17,4 +17,4 @@ jobs:
           type: now
           from_branch: main
           target_branch: storybook-deploy
-          token: ${{ storybook_github_token }}
+          github_token: ${{ secrets.storybook_github_token }}
