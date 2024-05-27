@@ -11,10 +11,16 @@ npm i imageslider-next
 ## Example
 
 ```ts
+
 <ImageSliderNext data={imageData} sliderClassName={"w-full m-5 shadow-md h-[60vh] rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
 
+```
+
+### data structure
+```json
+
 // json data structure
-imageData: [
+[
     {
       id: 1,
       imageUrl: 'https://www.w3schools.com/w3images/workbench.jpg',
@@ -31,8 +37,12 @@ imageData: [
       title: 'Image 3',
     },
     // Add more images as needed
-  ]
+]
 
+```
+
+### import in NextJS via external json file
+```ts
 
 // Using NextJS and external json.
 import imageData from '@/public/your-data.json';
