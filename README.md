@@ -13,6 +13,7 @@ npm i imageslider-next
 ```ts
 <ImageSliderNext data={imageData} sliderClassName={"w-full m-5 shadow-md h-[60vh] rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
 
+// json data structure
 imageData: [
     {
       id: 1,
@@ -31,10 +32,15 @@ imageData: [
     },
     // Add more images as needed
   ]
+
+
+// Using NextJS and external json.
+import imageData from '@/public/your-data.json';
+
 ```
 
 ## Documentation
 
-[StoryBook Url: https://imageslider-next.vercel.app/](https://imageslider-next.vercel.app/) 
+**Storybook Url:** [https://imageslider-next.vercel.app/](https://imageslider-next.vercel.app/) 
 
 ## Contributing
