@@ -32,7 +32,7 @@ Default.args = {
     },
     // Add more images as needed
   ],
-  sliderClassName: 'w-full m-5 shadow-md h-[60vh] rounded-lg',
+  sliderClassName: 'm-5 shadow-md h-[60vh] rounded-lg',
   slideClassName: '',
   buttonClassName: '',
   imageWidth: 500,
