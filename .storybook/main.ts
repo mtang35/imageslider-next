@@ -9,7 +9,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/preset-typescript",
+    //"@storybook/preset-typescript",
     {
       name: '@storybook/addon-styling-webpack',
       options: {
