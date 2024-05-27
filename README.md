@@ -11,7 +11,26 @@ npm i imageslider-next
 ## Example
 
 ```bash
-<ImageSliderNext data={imageData2} sliderStyle={"w-full m-5 shadow-md h-[60vh] rounded-lg"} slideStyle={""} buttonStyle={""} imageHeight={300} imageWidth={500} />
+<ImageSliderNext data={imageData} sliderClassName={"w-full m-5 shadow-md h-[60vh] rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
+
+imageData: [
+    {
+      id: 1,
+      imageUrl: 'https://www.w3schools.com/w3images/workbench.jpg',
+      title: 'Image 1',
+    },
+    {
+      id: 2,
+      imageUrl: 'https://www.w3schools.com/w3images/coffee.jpg',
+      title: 'Image 2',
+    },
+    {
+      id: 3,
+      imageUrl: 'https://www.w3schools.com/w3images/sound.jpg',
+      title: 'Image 3',
+    },
+    // Add more images as needed
+  ]
 ```
 
 ## Documentation

@@ -7,9 +7,9 @@ export interface ItemData {
   
 export interface ImageSliderProps {
     data: ItemData[];
-    sliderStyle: string;
-    slideStyle: string;
-    buttonStyle: string;
+    sliderClassName: string;
+    slideClassName: string;
+    buttonClassName: string;
     imageWidth: number;
     imageHeight: number;
 }
