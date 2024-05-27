@@ -17,7 +17,7 @@ npm i imageslider-next
 ```
 
 ### data structure
-```json
+```ts
 
 // json data structure
 [
