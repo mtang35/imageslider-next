@@ -11,19 +11,23 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": ["image slider", "tailwindcss", "nextjs"],
+  "keywords": [
+    "image slider",
+    "tailwindcss",
+    "nextjs"
+  ],
   "author": "Michael Tang",
   "license": "ISC",
   "description": "Simple image slider component with left to right slide animation.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mtang35/imageslider-next.git"
+    "url": "git+https://github.com/mtang35/imageslider-next.git"
   },
   "dependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
     "@babel/preset-react": "^7.24.1",
-    "@babel/preset-typescript": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.3",
@@ -39,7 +43,6 @@
     "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
     "@storybook/blocks": "^8.1.3",
-    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^8.1.3",
     "@storybook/react-webpack5": "^8.1.3",
     "@storybook/test": "^8.1.3",

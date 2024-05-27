@@ -4,13 +4,13 @@
 
 ## Installation
 
-```bash
+```zsh
 npm i imageslider-next
 ```
 
 ## Example
 
-```bash
+```ts
 <ImageSliderNext data={imageData} sliderClassName={"w-full m-5 shadow-md h-[60vh] rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
 
 imageData: [
@@ -35,5 +35,6 @@ imageData: [
 
 ## Documentation
 
+[StoryBook Url:]("https://imageslider-next.vercel.app/") 
 
 ## Contributing
