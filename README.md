@@ -35,6 +35,6 @@ imageData: [
 
 ## Documentation
 
-[StoryBook Url:]("https://imageslider-next.vercel.app/") 
+[StoryBook Url: https://imageslider-next.vercel.app/](https://imageslider-next.vercel.app/) 
 
 ## Contributing
