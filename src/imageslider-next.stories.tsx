@@ -7,6 +7,7 @@ import 'tailwindcss/tailwind.css';
 export default {
   title: 'ImageSliderNext',
   component: ImageSliderNext,
+  tags: ['autodocs'],
 } as Meta;
 
 const Template: StoryFn<ImageSliderProps> = (args) => <ImageSliderNext {...args} />;
