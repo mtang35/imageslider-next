@@ -5,7 +5,7 @@ import { ImageSliderProps } from './imagesliderprops';
 import 'tailwindcss/tailwind.css';
 
 
-const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderStyle, slideStyle, buttonStyle, imageWidth, imageHeight }) => {
+const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, slideClassName, buttonClassName, imageWidth, imageHeight }) => {
   
   const [current, setCurrent] = useState(0);
   const [slides, setSlides] = useState<HTMLDivElement | null>(null);
@@ -43,10 +43,10 @@ const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderStyle, slideS
   const baseSlideCssClass = "slide flex-none w-full h-full items-center justify-center overflow-hidden";
 
   return (
-    <div className={`${baseSliderCssClass} ${sliderStyle}`} id="slider">
+    <div className={`${baseSliderCssClass} ${sliderClassName}`} id="slider">
         <div className="slides flex transition-transform duration-700 ease-in-out">
           {data.map((itemData, index) => (
-            <div key={itemData.id} className={`${baseSlideCssClass} ${slideStyle}`}>
+            <div key={itemData.id} className={`${baseSlideCssClass} ${slideClassName}`}>
               <img src={itemData.imageUrl} alt={itemData.title} width={imageWidth} height={imageHeight} className='w-full' />
             </div>
           ))}
