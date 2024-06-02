@@ -8,11 +8,34 @@
 npm i imageslider-next
 ```
 
+### Configure Tailwind
+
+For help with Tailwind CSS installation: 
+[Tailwind CSS Installation](https://tailwindcss.com/docs/installation)
+
+Add imageslider-next component to the template path in `tailwind.config.js` file:
+
+```ts
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./node_modules/imageslider-next/**/*.js"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
 ## Example
 
 ```ts
 
-<ImageSliderNext data={imageData} sliderClassName={"w-full m-5 shadow-md h-[60vh] rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
+<div className="relative flex items-center justify-center">
+  <ImageSliderNext data={imageData} sliderClassName={"w-full shadow-md h-48 sm:h-64 xl:h-80 2xl:h-96 rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
+</div>
 
 ```
 
