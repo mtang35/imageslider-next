@@ -1,0 +1,10 @@
+# .npmignore
+
+# Exclude Storybook directory
+*/stories/*
+
+# You can also exclude specific file types related to Storybook
+*.stories.js
+*.stories.jsx
+*.stories.ts
+*.stories.tsx
