@@ -1,6 +1,6 @@
 {
   "name": "imageslider-next",
-  "version": "1.1.8",
+  "version": "1.1.11",
   "main": "dist/imageslider-next.js",
   "types": "dist/types/src/imageslider-next.d.ts",
   "files": [

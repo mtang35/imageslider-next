@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { ImageSliderProps } from './imagesliderprops';
-import 'tailwindcss/tailwind.css';
+//import 'tailwindcss/tailwind.css';
 
 
 const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, slideClassName, buttonClassName, imageWidth, imageHeight }) => {
@@ -48,7 +48,7 @@ const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, sl
         <div className="slides flex transition-transform duration-700 ease-in-out">
           {data.map((itemData, index) => (
             <div key={itemData.id} className={`${baseSlideCssClass} ${slideClassName}`}>
-              <img src={itemData.imageUrl} alt={itemData.title} width={imageWidth} height={imageHeight} className='w-full' />
+              <img src={itemData.imageUrl} alt={itemData.title} className='w-full' />
             </div>
           ))}
         </div>
