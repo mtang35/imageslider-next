@@ -1,14 +1,14 @@
 {
   "name": "imageslider-next",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "main": "dist/imageslider-next.js",
-  "types": "dist/index.d.js",
+  "types": "dist/types/src/imageslider-next.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && cross-env BABEL_ENV=production babel src --out-dir dist --extensions '.ts,.tsx' --copy-files",
+    "build": "rimraf dist && cross-env BABEL_ENV=production babel src --out-dir dist --extensions '.ts,.tsx' --copy-files && tsc --emitDeclarationOnly",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

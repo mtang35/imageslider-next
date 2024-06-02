@@ -1,4 +1,5 @@
 'use strict'
+'use client'
 
 import React, { useEffect, useState } from 'react';
 import { ImageSliderProps } from './imagesliderprops';
