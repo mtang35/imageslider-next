@@ -34,7 +34,7 @@ const config: Config = {
 ```ts
 
 <div className="relative flex items-center justify-center">
-  <ImageSliderNext data={imageData} sliderClassName={"w-full shadow-md h-48 sm:h-64 xl:h-80 2xl:h-96 rounded-lg"} slideClassName={""} buttonClassName={""} imageHeight={300} imageWidth={500} />
+  <ImageSliderNext data={imageData} sliderClassName={"w-full shadow-md h-48 sm:h-64 xl:h-80 2xl:h-96 rounded-lg"} slideClassName={""} buttonClassName={"w-3 h-3 rounded-full bg-black/50"} buttonLabelClassName={"hidden"} imageHeight={300} imageWidth={500} />
 </div>
 
 ```

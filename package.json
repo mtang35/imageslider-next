@@ -1,6 +1,6 @@
 {
   "name": "imageslider-next",
-  "version": "1.1.11",
+  "version": "1.2.0",
   "main": "dist/imageslider-next.js",
   "types": "dist/types/src/imageslider-next.d.ts",
   "files": [
@@ -15,7 +15,8 @@
   "keywords": [
     "image slider",
     "tailwindcss",
-    "nextjs"
+    "nextjs",
+    "typescript"
   ],
   "author": "Michael Tang",
   "license": "ISC",
