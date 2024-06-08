@@ -3,10 +3,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { ImageSliderProps } from './imagesliderprops';
-//import 'tailwindcss/tailwind.css';
 
 
-const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, slideClassName, buttonClassName, imageWidth, imageHeight }) => {
+const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, slideClassName, buttonClassName, imageWidth, imageHeight, buttonLabelClassName }) => {
   
   const [current, setCurrent] = useState(0);
   const [slides, setSlides] = useState<HTMLDivElement | null>(null);
@@ -42,6 +41,8 @@ const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, sl
 
   const baseSliderCssClass = "overflow-hidden relative flex items-center justify-center";
   const baseSlideCssClass = "slide flex-none w-full h-full items-center justify-center overflow-hidden";
+  const baseButtonCssClass = (buttonClassName === "") ? "w-3 h-3 rounded-full bg-black/50" : buttonClassName;
+  const baseButtonLabelCssClass = (buttonLabelClassName === null) ? "" : buttonLabelClassName;
 
   return (
     <div className={`${baseSliderCssClass} ${sliderClassName}`} id="slider">
@@ -56,7 +57,11 @@ const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, sl
         <div className="flex flex-wrap absolute bottom-2 z-50 space-x-3">
                 {
                     data.map((itemData, index) => (
-                            <button type="button" onClick={() => goToNext(index)} className="w-3 h-3 rounded-full bg-black/50" aria-current="false" aria-label={itemData.title} key={index}></button>
+                            <button type="button" onClick={() => goToNext(index)} className={baseButtonCssClass} aria-current="false" aria-label={itemData.title} key={index}>
+                              <span className={baseButtonLabelCssClass}>
+                                {itemData.title}
+                              </span>
+                            </button>
                          )
                     )
                 }

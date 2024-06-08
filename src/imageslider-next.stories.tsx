@@ -34,7 +34,8 @@ Default.args = {
   ],
   sliderClassName: 'm-5 shadow-md h-[60vh] rounded-lg',
   slideClassName: '',
-  buttonClassName: '',
+  buttonClassName: 'w-3 h-3 rounded-full bg-slate-500',
+  buttonLabelClassName: 'hidden',
   imageWidth: 500,
   imageHeight: 300,
 };

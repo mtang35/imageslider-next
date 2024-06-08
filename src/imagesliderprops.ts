@@ -12,4 +12,5 @@ export interface ImageSliderProps {
     buttonClassName: string;
     imageWidth: number;
     imageHeight: number;
+    buttonLabelClassName?: string | null;
 }
