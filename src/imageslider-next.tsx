@@ -1,31 +1,31 @@
 'use strict'
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ImageSliderProps } from './imagesliderprops';
 
 
-const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, slideClassName, buttonClassName, imageWidth, imageHeight, buttonLabelClassName }) => {
+const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, slideClassName, buttonClassName, imageWidth, imageHeight, buttonLabelClassName, ImageComponent, imageProps }) => {
   
   const [current, setCurrent] = useState(0);
-  const [slides, setSlides] = useState<HTMLDivElement | null>(null);
+  const slidesRef = useRef<HTMLDivElement | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const slider = document.getElementById('slider');
-    if (slider) {
-      setSlides(slider.querySelector('.slides') as HTMLDivElement);
+    if (rootRef.current) {
+      slidesRef.current = rootRef.current.querySelector('.slides') as HTMLDivElement | null;
     }
   }, []);
 
   const handlePrev = () => {
-    if (slides) {
-      setCurrent((current - 1 + slides.children.length) % slides.children.length);
+    if (slidesRef.current) {
+      setCurrent((current - 1 + slidesRef.current.children.length) % slidesRef.current.children.length);
     }
   }
 
   const handleNext = () => {
-    if (slides) {
-      setCurrent((current + 1) % slides.children.length);
+    if (slidesRef.current) {
+      setCurrent((current + 1) % slidesRef.current.children.length);
     }
   }
 
@@ -34,10 +34,10 @@ const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, sl
   }
 
   useEffect(() => {
-    if (slides) {
-      slides.style.transform = 'translateX(' + (-current * 100) + '%)';
+    if (slidesRef.current) {
+      slidesRef.current.style.transform = 'translateX(' + (-current * 100) + '%)';
     }
-  }, [current, slides]);
+  }, [current, slidesRef]);
 
   const baseSliderCssClass = "overflow-hidden relative flex items-center justify-center";
   const baseSlideCssClass = "slide flex-none w-full h-full items-center justify-center overflow-hidden";
@@ -45,13 +45,37 @@ const ImageSliderNext: React.FC<ImageSliderProps> = ({ data, sliderClassName, sl
   const baseButtonLabelCssClass = (buttonLabelClassName === null) ? "" : buttonLabelClassName;
 
   return (
-    <div className={`${baseSliderCssClass} ${sliderClassName}`} id="slider">
+  <div ref={rootRef} className={`${baseSliderCssClass} ${sliderClassName}`}>
         <div className="slides flex transition-transform duration-700 ease-in-out">
-          {data.map((itemData, index) => (
-            <div key={itemData.id} className={`${baseSlideCssClass} ${slideClassName}`}>
-              <img src={itemData.imageUrl} alt={itemData.title} className='w-full' />
-            </div>
-          ))}
+          {data.map((itemData, index) => {
+            const itemWidth = itemData.width ?? imageWidth ?? 1;
+            const itemHeight = itemData.height ?? imageHeight ?? 1;
+            // keep paddingTop calculation available if needed elsewhere
+            const paddingTop = `${(itemHeight / itemWidth) * 100}%`;
+
+            const forwardedImageProps = { ...(imageProps ?? {}) };
+            // Always ignore fill to avoid absolute/fill behavior which can cause layout issues in the slider
+            if ('fill' in forwardedImageProps) delete forwardedImageProps.fill;
+
+            return (
+              <div key={itemData.id} className={`${baseSlideCssClass} ${slideClassName}`}>
+                {ImageComponent ? (
+                  // Always render the provided Image component in non-fill mode (width/height or responsive)
+                  <ImageComponent
+                    src={itemData.imageSrc ?? itemData.imageUrl ?? ''}
+                    alt={itemData.alt ?? itemData.title}
+                    width={itemData.width ?? imageWidth}
+                    height={itemData.height ?? imageHeight}
+                    className="w-full h-auto"
+                    {...forwardedImageProps}
+                  />
+                ) : (
+                  // native img fallback: make responsive via width 100% and height auto
+                  <img src={itemData.imageUrl ?? (itemData.imageSrc as string) ?? ''} alt={itemData.alt ?? itemData.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                )}
+              </div>
+            );
+          })}
         </div>
         
         <div className="flex flex-wrap absolute bottom-2 z-50 space-x-3">

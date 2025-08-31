@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-webpack5";
 import 'tailwindcss/tailwind.css';
 import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';
 
