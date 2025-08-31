@@ -79,6 +79,8 @@ pnpm storybook
 
 There are example stories that show a native `<img>` fallback and usage with a mock `Image` component. Use the `With Image Component` story to test integration.
 
+Hosted Storybook: https://imageslider-next.vercel.app/
+
 ## TypeScript / image imports
 
 If your TypeScript setup complains about importing image files, add a simple declaration file `src/types/images.d.ts`:
